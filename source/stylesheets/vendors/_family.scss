@@ -68,6 +68,16 @@
   }
 }
 
+// This mixin is commented because of a bug
+// It has been removed for the v1.0.6
+// @mixin each-after($num, $offset) {
+//   @if $num < $offset {
+//     &:nth-child(#{$offset - $num}n) ~ :nth-child(#{$num}n) {
+//       @content;
+//     }
+//   }
+// }
+
 // Alias of each()
 @mixin every($num) {
   @include each($num) {
@@ -142,6 +152,17 @@
 // without arguments
 //////////////////
 
+@mixin first-child() {
+  &:first-of-type {
+    @content
+  }
+}
+
+@mixin last-child() {
+  &:last-of-type {
+    @content
+  }
+}
 @mixin even(){
   &:nth-child(even) {
     @content

@@ -26,7 +26,9 @@ end
 ###
 # Helpers
 ###
-config[:family_lib_version] = '1.0.4'
+config[:family_lib_version] = '1.0.6'
+config[:family_mixins_number] = '26'
+config[:family_file_weight] = '4Kb'
 
 # Methods defined in the helpers block are available in templates
 # helpers do

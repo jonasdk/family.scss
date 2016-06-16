@@ -1,7 +1,6 @@
 'use strict';
 
 window.onload = function(){
-  getNbSamples()
   childManager()
   childIndex();
   modalizer();
@@ -48,11 +47,6 @@ function mixPattern(num) {
   }
 }
 
-function getNbSamples(){
-  var n = document.getElementById('amount');
-  var ex = document.querySelectorAll('.doc ul').length;
-  n.textContent = ex;
-}
 
 // Generate li incrementer
 function childManager(){
@@ -204,29 +198,18 @@ function modalizer() {
 
 
 window.addEventListener('DOMContentLoaded',function(){
-  let search = document.querySelector('.searchbox input'),
+  var search = document.querySelector('.searchbox input'),
   projectNames = document.querySelectorAll('.mixin h3'),
   projectDescriptions = document.querySelectorAll('.mixin'),
   clearButton = document.querySelector('.searchbox #clear');
 
-  search.addEventListener('input',function(){
-    performSearch()
-  });
   clearButton.addEventListener('click', function(){
     clearSearch()
   })
 
-  function performSearch() {
-    for (let i = 0; i < projectNames.length; i++) {
-      if (projectNames[i].innerHTML.toLowerCase().indexOf(search.value.toLowerCase()) === -1 && projectDescriptions[i].innerHTML.toLowerCase().indexOf(search.value.toLowerCase()) === -1) {
-        projectNames[i].parentNode.parentNode.classList.add('hidden');
-      } else {
-        projectNames[i].parentNode.parentNode.classList.remove('hidden');
-      }
-    };
-  }
+
   function clearSearch() {
-    for (let i = 0; i < projectNames.length; i++) {
+    for (var i = 0; i < projectNames.length; i++) {
       projectNames[i].parentNode.parentNode.classList.remove('hidden');
     }
   }
